@@ -1,6 +1,4 @@
-import java.util.*
-
-fun main(args: Array<String>) {
+fun main() {
 
     // Escribe un programa que permita jugar a adivinar un numero.
     //
@@ -22,12 +20,11 @@ fun main(args: Array<String>) {
 }
 
 fun readIntFromKeyboard(): Int {
-    var result: Int?
-    val keyboardReader = Scanner(System.`in`)
+    var result : Int?
     do {
-        val selectedOption = keyboardReader.nextLine()
+        val selectedOption = readLine()
         result = try {
-            selectedOption.toInt()
+            selectedOption?.toInt()
         } catch (e: NumberFormatException) {
             println("Lo que has introducido no es un número.")
             null
