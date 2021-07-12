@@ -17,6 +17,29 @@ fun main() {
     // 3 <- Valor introducido por el usuario
     // Enhorabuena! El numero era 3
 
+    val rango = 1..9
+
+    val numeroBuscado = getRandomNumber(1..9)
+    println("Encuentra un numero entre $rango")
+    do {
+        println("Escribe tu numero")
+        val opcionUsuario = readIntFromKeyboard()
+        val encontrado = when {
+            numeroBuscado > opcionUsuario -> {
+                println("El numero buscado es mas grande")
+                false
+            }
+            numeroBuscado < opcionUsuario -> {
+                println("El numero buscado es mas peque")
+                false
+            }
+            else -> {
+                println("Enhorabuena! El numero era $numeroBuscado")
+                true
+            }
+        }
+    } while (!encontrado)
+
 }
 
 fun readIntFromKeyboard(): Int {
